@@ -5,16 +5,25 @@ import java.util.*;
 public class Door {
 
     private boolean locked;
-
+    private int id;
     private Room room1;
     private Room room2;
 
 
 
-    public Door(boolean locked, Room room1, Room room2) {
+    public Door(boolean locked, Room room1, Room room2, int id) {
         this.locked = locked;
         this.room1=room1;
         this.room2=room2;
+        this.id=id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Room getOtherRoom(Room room){

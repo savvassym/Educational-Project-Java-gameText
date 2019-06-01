@@ -4,6 +4,7 @@ public class GameState {
     private Room currentRoom;
     private  String message = "";
 
+
     public GameState(Room currentRoom, String message) {
         this.currentRoom = currentRoom;
         this.message = message;
