@@ -22,7 +22,7 @@ public class Parser {
             command = new UseCommand(new Key(1));
         }
         else {
-            command = null;
+            command = new UnknownCommand();
         }
         return command;
     }
