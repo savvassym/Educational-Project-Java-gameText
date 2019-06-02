@@ -7,9 +7,6 @@ public class Key implements  Item{
         return id;
     }
 
-    public Key(int id){
-        this.id=id;
-    }
 
     @Override
     public String use(Room currentRoom) {

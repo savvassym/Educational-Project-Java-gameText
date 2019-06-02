@@ -1,12 +1,9 @@
 package gr.gcc.hellisland.Domain;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Parser {
     private static final Map<String,Item> registry = new HashMap<>();
+    private static final List<String> validDirections = Arrays.asList("left","right","up","down");
 
     public Command parser(String input){
         Command command;
@@ -14,23 +11,24 @@ public class Parser {
         Tokenizer token = new Tokenizer();
         tokens = token.getToken(input);
 
-        if(tokens[0].equalsIgnoreCase("move")){
-            command = new GoCommand(Direction.valueOf(tokens[1].toLowerCase()));
+        if(tokens[0].equalsIgnoreCase("move") && validDirections.contains(tokens[1])){
+            return new GoCommand(Direction.valueOf(tokens[1]));
         }
-        else if(tokens[0].equalsIgnoreCase("use")){
-            String item = tokens[1];
-            command = new UseCommand(new Key(1));
+        else if(tokens[0].equalsIgnoreCase("use")&&registry.containsKey(tokens[1])){
+            return new UseCommand(registry.get(tokens[1]));
         }
         else {
-            command = new UnknownCommand();
+            return new UnknownCommand(tokens[0]+tokens[1]);
         }
-        return command;
     }
 
 
 
     public Parser(){
+        registry.put("key",new Key());
     }
+
+
 
 }
 
