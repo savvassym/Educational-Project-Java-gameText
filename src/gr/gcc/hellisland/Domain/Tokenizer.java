@@ -6,15 +6,20 @@ import java.util.List;
 
 public class Tokenizer {
 
-//    private List<String> availableCommands = Arrays.asList("move","use","drop","pick");
-//    private List<String> availableDirections = Arrays.asList("left","right","up","down");
-    private String[] token = new String[2];
+    private static final List<String> validCommands = Arrays.asList("move","use","pick","drop","attack");
+    private static final List<String> validDirec = Arrays.asList("left","right","up","down");
+    //private String[] token = new String[2];
 
     public String[] getToken(String input) {
-        String newstr = input.toLowerCase();
-        token = newstr.split(" ");
+        String [] token = new String[2];
+        String newStr = input.toLowerCase();
+        token = newStr.split(" ");
         return token;
     }
+
+
+
+
 
 
     //TODO: Must fix the tokenizer to not send null and wrong inputs!..

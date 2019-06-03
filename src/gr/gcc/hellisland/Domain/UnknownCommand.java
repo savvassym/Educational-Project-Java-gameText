@@ -10,6 +10,6 @@ public class UnknownCommand implements Command{
 
     @Override
     public GameState execute(Room currentRoom) {
-        return new GameState(currentRoom,"unknown Command");
+        return new GameState(currentRoom,"unknown Command " +str);
     }
 }
