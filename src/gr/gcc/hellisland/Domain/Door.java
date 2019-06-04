@@ -1,7 +1,5 @@
 package gr.gcc.hellisland.Domain;
 
-import java.util.*;
-
 public class Door {
 
     private boolean locked;

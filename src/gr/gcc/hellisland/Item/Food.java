@@ -1,7 +1,6 @@
 package gr.gcc.hellisland.Item;
 
 import gr.gcc.hellisland.Domain.Room;
-import gr.gcc.hellisland.Item.Item;
 
 public class Food implements Item {
     @Override

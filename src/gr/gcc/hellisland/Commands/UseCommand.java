@@ -1,8 +1,8 @@
 package gr.gcc.hellisland.Commands;
 
 import gr.gcc.hellisland.Domain.GameState;
-import gr.gcc.hellisland.Item.Item;
 import gr.gcc.hellisland.Domain.Room;
+import gr.gcc.hellisland.Item.Item;
 
 public class UseCommand implements Command {
     private Item item;

@@ -1,6 +1,10 @@
 package gr.gcc.hellisland;
-import gr.gcc.hellisland.Domain.*;
+
 import gr.gcc.hellisland.Commands.Command;
+import gr.gcc.hellisland.Domain.Direction;
+import gr.gcc.hellisland.Domain.Door;
+import gr.gcc.hellisland.Domain.GameState;
+import gr.gcc.hellisland.Domain.Room;
 import gr.gcc.hellisland.Input.InputChecker;
 import gr.gcc.hellisland.Input.UserInput;
 import gr.gcc.hellisland.Parser.Parser;

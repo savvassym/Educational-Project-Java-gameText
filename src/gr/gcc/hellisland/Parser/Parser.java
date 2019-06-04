@@ -1,4 +1,5 @@
 package gr.gcc.hellisland.Parser;
+
 import gr.gcc.hellisland.Commands.Command;
 import gr.gcc.hellisland.Commands.GoCommand;
 import gr.gcc.hellisland.Commands.UnknownCommand;
@@ -7,7 +8,9 @@ import gr.gcc.hellisland.Domain.Direction;
 import gr.gcc.hellisland.Item.Item;
 import gr.gcc.hellisland.Item.Key;
 import gr.gcc.hellisland.Tokenizer.Tokenizer;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Parser {
     private static final Map<String, Item> registry = new HashMap<>();
