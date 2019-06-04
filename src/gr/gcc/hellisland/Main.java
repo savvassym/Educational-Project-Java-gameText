@@ -1,11 +1,12 @@
 package gr.gcc.hellisland;
 import gr.gcc.hellisland.Domain.*;
 
-import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+        UserInput userInput = new UserInput();
+        UI ui = new UI();
+        InputChecker check = new InputChecker();
         Room room1 = new Room("Mainland");
         Room room2 = new Room("Plane");
         Room room3 = new Room("Sea");
@@ -24,10 +25,21 @@ public class Main {
         room1.addRoom(room4,Direction.up,true,3);
         room4.addRoom(room5,Direction.right,true,4);
 
+
+        String input;
+        boolean isCorrect;
         Room currentRoom = room2;
         Parser pars = new Parser();
-        String in = scan.nextLine();
-        Command command = pars.parser(in);
+        ui.showMsg();
+        input=userInput.getInput();
+        isCorrect = check.isChecked(input);
+        while (isCorrect!=true){
+            ui.showMsg();
+            input=userInput.getInput();
+            isCorrect=check.isChecked(input);
+        }
+
+        Command command = pars.parser(input);
         GameState gameState = command.execute(currentRoom);
         System.out.println(gameState.getMessage());
 

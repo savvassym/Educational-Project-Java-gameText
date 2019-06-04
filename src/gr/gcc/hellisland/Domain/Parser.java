@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Parser {
     private static final Map<String,Item> registry = new HashMap<>();
-    private static final List<String> validCommands = Arrays.asList("move","use","pick","drop","attack");
-    private static final List<String> validDirec = Arrays.asList("left","right","up","down");
+//    private static final List<String> validCommands = Arrays.asList("move","use","pick","drop","attack");
+//    private static final List<String> validDirec = Arrays.asList("left","right","up","down");
 
     public Command parser(String input) {
         Command command;
