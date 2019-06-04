@@ -1,6 +1,9 @@
-package gr.gcc.hellisland.Domain;
+package gr.gcc.hellisland.Commands;
 
-public class UnknownCommand implements Command{
+import gr.gcc.hellisland.Domain.GameState;
+import gr.gcc.hellisland.Domain.Room;
+
+public class UnknownCommand implements Command {
     private String str;
 
     public UnknownCommand(String str){

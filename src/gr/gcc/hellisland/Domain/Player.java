@@ -1,6 +1,6 @@
 package gr.gcc.hellisland.Domain;
 
-import java.util.*;
+import gr.gcc.hellisland.Commands.Command;
 
 public class Player implements Command {
     @Override

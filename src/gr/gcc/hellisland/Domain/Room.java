@@ -1,4 +1,6 @@
 package gr.gcc.hellisland.Domain;
+import gr.gcc.hellisland.Item.Item;
+
 import java.util.*;
 
 public class Room{

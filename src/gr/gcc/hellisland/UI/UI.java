@@ -1,4 +1,4 @@
-package gr.gcc.hellisland.Domain;
+package gr.gcc.hellisland.UI;
 
 public class UI {
 

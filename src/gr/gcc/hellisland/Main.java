@@ -1,5 +1,10 @@
 package gr.gcc.hellisland;
 import gr.gcc.hellisland.Domain.*;
+import gr.gcc.hellisland.Commands.Command;
+import gr.gcc.hellisland.Input.InputChecker;
+import gr.gcc.hellisland.Input.UserInput;
+import gr.gcc.hellisland.Parser.Parser;
+import gr.gcc.hellisland.UI.UI;
 
 public class Main {
     public static void main(String[] args) {
