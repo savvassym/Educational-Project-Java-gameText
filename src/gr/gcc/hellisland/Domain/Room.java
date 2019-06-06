@@ -2,10 +2,7 @@ package gr.gcc.hellisland.Domain;
 
 import gr.gcc.hellisland.Item.Item;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Room{
 
@@ -34,21 +31,18 @@ public class Room{
         return door.getOtherRoom(this);
     }
 
-    public boolean unlockDoor(int id){
+    public boolean unlockDoors(int id){
         boolean hasUnlocked = false;
-        for(Door door : exits.values())
-        {
-            if(door.getId()==id){
+        for(Door door : exits.values()){
+            if(door.getId() == id && door.isLocked()){
                 hasUnlocked=true;
                 door.setLocked(false);
             }
-//            if(door.isLocked()){
-//                hasUnlocked=true;
-//                door.setLocked(false);
-//            }
         }
         return hasUnlocked;
     }
+
+
 
     private Room addRoom(Door door,Direction direction){
         this.exits.put(direction,door);

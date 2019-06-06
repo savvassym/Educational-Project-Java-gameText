@@ -37,9 +37,11 @@ public class Parser {
     }
 
     public Parser(){
-        registry.put("key",new Key());
+        registry.put("key1",new Key(1));
+        registry.put("key2",new Key(2));
+        registry.put("key3",new Key(3));
+        registry.put("key4",new Key(4));
         registry.put("apple",new Food("apple",10,true,true));
-
     }
 
 

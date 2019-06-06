@@ -10,7 +10,7 @@ import static gr.gcc.hellisland.Parser.Parser.registry;
 public class InputChecker {
     private static final List<String> validCommands = Arrays.asList("use","move","pick","drop","attack");
     private static final List<String> validDirect = Arrays.asList("left","right","up","down");
-    private static final List<String> validItems = Arrays.asList("ball","key","sword","axe","apple");
+    private static final List<String> validItems = Arrays.asList("ball","key1","sword","axe","apple","key2","key3","key4");
 
     public boolean isChecked(String input) {
         Tokenizer tk = new Tokenizer();

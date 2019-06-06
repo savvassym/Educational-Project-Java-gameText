@@ -28,28 +28,36 @@ public class Main {
         Door door2 = new Door(false,room1,room3,2);
         Door door3 = new Door(true,room1,room4,3);
         Door door4 = new Door(true,room4,room5,4);
-
         room1.addRoom(room2,Direction.right,true,1);
         room1.addRoom(room3,Direction.down,true,2);
         room1.addRoom(room4,Direction.up,true,3);
         room4.addRoom(room5,Direction.right,true,4);
 
 
+
         String input;
-        boolean isCorrect;
         Room currentRoom = room2;
+        boolean isCorrect;
         Parser pars = new Parser();
         ui.showMsg();
         input=userInput.getInput();
-        isCorrect = check.isChecked(input);
-        while (!isCorrect){
-            ui.showMsg();
+        while (!input.equals("0")) {
+            isCorrect = check.isChecked(input);
+            while (!isCorrect) {
+                ui.showMsg();
+                input = userInput.getInput();
+                isCorrect = check.isChecked(input);
+            }
+            Command command = pars.parser(input);
+
+            GameState gameState = command.execute(currentRoom);
+            currentRoom =gameState.getCurrentRoom();
+            System.out.println(gameState.getMessage());
+
             input=userInput.getInput();
-            isCorrect=check.isChecked(input);
         }
-        Command command = pars.parser(input);
-        GameState gameState = command.execute(currentRoom);
-        System.out.println(gameState.getMessage());
+
+        System.out.println(currentRoom.getName());
 
 
     }

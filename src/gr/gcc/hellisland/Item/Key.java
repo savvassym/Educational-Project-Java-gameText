@@ -5,6 +5,14 @@ import gr.gcc.hellisland.Domain.Room;
 public class Key implements Item {
     private int id;
 
+    public Key(int id) {
+        this.id = id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
@@ -12,7 +20,7 @@ public class Key implements Item {
 
     @Override
     public String use(Room currentRoom) {
-       if(currentRoom.unlockDoor(getId())){
+       if(currentRoom.unlockDoors(getId())){
             return "Hey! Managed to unlock something";
         }
         else {
