@@ -1,5 +1,6 @@
 package gr.gcc.hellisland.Item;
 
+import gr.gcc.hellisland.Domain.Player;
 import gr.gcc.hellisland.Domain.Room;
 
 public class Food implements Item {

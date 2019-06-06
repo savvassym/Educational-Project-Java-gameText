@@ -1,5 +1,7 @@
 package gr.gcc.hellisland.Input;
 
+import gr.gcc.hellisland.Tokenizer.Tokenizer;
+
 import java.util.Scanner;
 
 public class UserInput {
@@ -9,8 +11,8 @@ public class UserInput {
 
 
     public String getInput() {
-        input=sc.nextLine();
+        input = sc.nextLine();
         return input;
     }
-}
 
+}

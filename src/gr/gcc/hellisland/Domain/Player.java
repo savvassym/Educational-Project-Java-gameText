@@ -3,11 +3,16 @@ package gr.gcc.hellisland.Domain;
 import gr.gcc.hellisland.Commands.Command;
 
 public class Player implements Command {
+    int life=10;
+    int dmg = 100;
     @Override
     public GameState execute(Room currentRoom) {
         return null;
     }
-    //    private Room currentRoom;
+
+
+
+    // private Room currentRoom;
 //    private Door door;
 //    private Inventory playerInventory = new Inventory();
 //

@@ -1,12 +1,14 @@
 package gr.gcc.hellisland;
 
 import gr.gcc.hellisland.Commands.Command;
+import gr.gcc.hellisland.Commands.UseCommand;
 import gr.gcc.hellisland.Domain.Direction;
 import gr.gcc.hellisland.Domain.Door;
 import gr.gcc.hellisland.Domain.GameState;
 import gr.gcc.hellisland.Domain.Room;
 import gr.gcc.hellisland.Input.InputChecker;
 import gr.gcc.hellisland.Input.UserInput;
+import gr.gcc.hellisland.Item.Key;
 import gr.gcc.hellisland.Parser.Parser;
 import gr.gcc.hellisland.UI.UI;
 
@@ -27,8 +29,6 @@ public class Main {
         Door door3 = new Door(true,room1,room4,3);
         Door door4 = new Door(true,room4,room5,4);
 
-        //Key k1 = new Key();
-
         room1.addRoom(room2,Direction.right,true,1);
         room1.addRoom(room3,Direction.down,true,2);
         room1.addRoom(room4,Direction.up,true,3);
@@ -42,12 +42,11 @@ public class Main {
         ui.showMsg();
         input=userInput.getInput();
         isCorrect = check.isChecked(input);
-        while (isCorrect!=true){
+        while (!isCorrect){
             ui.showMsg();
             input=userInput.getInput();
             isCorrect=check.isChecked(input);
         }
-
         Command command = pars.parser(input);
         GameState gameState = command.execute(currentRoom);
         System.out.println(gameState.getMessage());
