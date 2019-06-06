@@ -10,6 +10,7 @@ public class Room{
     private Map<Direction,Door> exits = new HashMap<>();
     private List<Item> itemsInRoom = new ArrayList<>();
 
+
     public Room(String name){
         this.name = name;
     }
@@ -43,10 +44,13 @@ public class Room{
     }
 
 
-
     private Room addRoom(Door door,Direction direction){
         this.exits.put(direction,door);
         return this;
+    }
+
+    public boolean contains(Item item){
+        return itemsInRoom.contains(item);
     }
 
     public Room addItemsToRoom(Item item){

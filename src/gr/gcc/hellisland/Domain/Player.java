@@ -5,6 +5,8 @@ import gr.gcc.hellisland.Commands.Command;
 public class Player implements Command {
     int life=10;
     int dmg = 100;
+
+
     @Override
     public GameState execute(Room currentRoom) {
         return null;

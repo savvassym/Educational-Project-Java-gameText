@@ -1,5 +1,6 @@
 package gr.gcc.hellisland.Domain;
 
+
 public class GameState {
     private Room currentRoom;
     private  String message = "";
@@ -25,4 +26,5 @@ public class GameState {
     public void setMessage(String message) {
         this.message = message;
     }
+
 }

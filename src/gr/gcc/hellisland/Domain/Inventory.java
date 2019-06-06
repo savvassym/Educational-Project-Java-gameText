@@ -2,28 +2,55 @@ package gr.gcc.hellisland.Domain;
 
 import gr.gcc.hellisland.Item.Item;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Inventory {
-    private List<Item> list = new ArrayList<>(100);
+    private final Map<String,Item> inventory = new HashMap<String,Item>();
 
-    public void addList(Item item) {
-        list.add(item);
+    public Map<String, Item> getInventory() {
+        return inventory;
     }
 
-    public List<Item> getList() {
-        return list;
+    public void addItem(Item item) {
+        inventory.put(item.getName(), item);
     }
 
-    public boolean searchList(Item item) {
-        boolean found;
-        found=list.contains(item);
-        return found;
+    public Item getItemNamed(String name) {
+        return inventory.get(name);
     }
 
-    public int sizelist() {
-        return list.size();
+    public Item takeItemNamed(String name) {
+        return inventory.remove(name);
     }
 
+    public void removeItem(Item item) {
+        boolean removed = inventory.values().remove(item);
+        if (!removed) {
+            throw new IllegalArgumentException("Did not have item: " + item);
+        }
+    }
+
+    public boolean contains(Item item) {
+        return inventory.containsKey(item);
+    }
+
+    public boolean isEmpty(){
+        return inventory.isEmpty();
+    }
+
+    public boolean hasItemNamed(String name) {
+        return inventory.containsKey(name);
+    }
+
+    @Override
+    public String toString() {
+        return "Inventory{" +
+                "inventory=" + inventory +
+                '}';
+    }
+
+    public Collection<String> namesOfItems() {
+        return Collections.unmodifiableCollection(inventory.keySet());
+    }
 }
+

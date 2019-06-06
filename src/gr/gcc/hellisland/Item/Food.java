@@ -5,7 +5,17 @@ import gr.gcc.hellisland.Domain.Room;
 
 public class Food implements Item {
     @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
     public String use(Room currentRoom) {
+        return null;
+    }
+
+    @Override
+    public String pick(Room currentRoom, Item item) {
         return null;
     }
 

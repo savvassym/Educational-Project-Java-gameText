@@ -18,6 +18,9 @@ public class Main {
         UserInput userInput = new UserInput();
         UI ui = new UI();
         InputChecker check = new InputChecker();
+        Key key1 =new Key(1);
+        Key key2 = new Key(2);
+        Key key3 = new Key(3);
         Room room1 = new Room("Mainland");
         Room room2 = new Room("Plane");
         Room room3 = new Room("Sea");
@@ -36,6 +39,7 @@ public class Main {
 
 
         String input;
+        ui.showOptionCommand();
         Room currentRoom = room2;
         boolean isCorrect;
         Parser pars = new Parser();
@@ -44,7 +48,7 @@ public class Main {
         while (!input.equals("0")) {
             isCorrect = check.isChecked(input);
             while (!isCorrect) {
-                ui.showMsg();
+                ui.showErrorMsg();
                 input = userInput.getInput();
                 isCorrect = check.isChecked(input);
             }
@@ -58,8 +62,6 @@ public class Main {
         }
 
         System.out.println(currentRoom.getName());
-
-
     }
 
 }
