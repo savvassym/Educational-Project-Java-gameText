@@ -2,7 +2,10 @@ package gr.gcc.hellisland.Domain;
 
 import gr.gcc.hellisland.Item.Item;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Inventory {
     private final Map<String,Item> inventory = new HashMap<String,Item>();

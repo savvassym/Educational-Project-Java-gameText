@@ -1,6 +1,5 @@
 package gr.gcc.hellisland.Item;
 
-import gr.gcc.hellisland.Domain.Inventory;
 import gr.gcc.hellisland.Domain.Room;
 
 public class Key implements Item {
@@ -10,8 +9,6 @@ public class Key implements Item {
     }
 
     private int id;
-    private Inventory inventory;
-
 
     public Key(int id) {
         this.id = id;

@@ -1,7 +1,5 @@
 package gr.gcc.hellisland.UI;
 
-import gr.gcc.hellisland.Domain.Direction;
-
 public class UI {
 
 

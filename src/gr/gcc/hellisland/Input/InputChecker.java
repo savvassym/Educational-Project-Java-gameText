@@ -1,10 +1,11 @@
 package gr.gcc.hellisland.Input;
 
 
-import gr.gcc.hellisland.Parser.Parser;
 import gr.gcc.hellisland.Tokenizer.Tokenizer;
+
 import java.util.Arrays;
 import java.util.List;
+
 import static gr.gcc.hellisland.Parser.Parser.registry;
 
 public class InputChecker {
