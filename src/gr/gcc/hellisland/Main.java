@@ -47,7 +47,7 @@ public class Main {
         input=userInput.getInput();
         while (!input.equals("0")) {
             isCorrect = check.isChecked(input);
-            while (!isCorrect) {
+            while (!isCorrect || input.equals("0")) {
                 ui.showErrorMsg();
                 input = userInput.getInput();
                 isCorrect = check.isChecked(input);
@@ -61,7 +61,7 @@ public class Main {
             input=userInput.getInput();
         }
 
-        System.out.println(currentRoom.getName());
+        //System.out.println(currentRoom.getName());
     }
 
 }
