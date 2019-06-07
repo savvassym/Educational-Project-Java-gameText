@@ -13,7 +13,7 @@ public class UI {
     }
 
     public void showOptionCommand(){
-        System.out.println("Greetings humans");
+        System.out.println("Greetings human!");
         System.out.println("Type of Commands you can type:\nCommand: move + Directions(left,right,up,down)");
         System.out.println("Command: use + key1 or key2 or key3 or key4");
     }

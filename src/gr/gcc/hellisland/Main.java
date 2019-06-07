@@ -1,10 +1,9 @@
 package gr.gcc.hellisland;
 
 import gr.gcc.hellisland.Commands.Command;
-import gr.gcc.hellisland.Commands.UseCommand;
 import gr.gcc.hellisland.Domain.Direction;
 import gr.gcc.hellisland.Domain.Door;
-import gr.gcc.hellisland.Domain.GameState;
+import gr.gcc.hellisland.Domain.Player;
 import gr.gcc.hellisland.Domain.Room;
 import gr.gcc.hellisland.Input.InputChecker;
 import gr.gcc.hellisland.Input.UserInput;
@@ -54,9 +53,9 @@ public class Main {
             }
             Command command = pars.parser(input);
 
-            GameState gameState = command.execute(currentRoom);
-            currentRoom =gameState.getCurrentRoom();
-            System.out.println(gameState.getMessage());
+            Player player = command.execute(currentRoom);
+            currentRoom = player.getCurrentRoom();
+            System.out.println(player.getMessage());
 
             input=userInput.getInput();
         }

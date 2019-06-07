@@ -1,6 +1,6 @@
 package gr.gcc.hellisland.Commands;
 
-import gr.gcc.hellisland.Domain.GameState;
+import gr.gcc.hellisland.Domain.Player;
 import gr.gcc.hellisland.Domain.Room;
 
 public class UnknownCommand implements Command {
@@ -12,7 +12,7 @@ public class UnknownCommand implements Command {
 
 
     @Override
-    public GameState execute(Room currentRoom) {
-        return new GameState(currentRoom,"unknown Command " +str);
+    public Player execute(Room currentRoom) {
+        return new Player(currentRoom,"unknown Command " +str);
     }
 }

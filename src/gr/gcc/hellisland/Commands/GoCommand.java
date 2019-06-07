@@ -1,7 +1,7 @@
 package gr.gcc.hellisland.Commands;
 
 import gr.gcc.hellisland.Domain.Direction;
-import gr.gcc.hellisland.Domain.GameState;
+import gr.gcc.hellisland.Domain.Player;
 import gr.gcc.hellisland.Domain.Room;
 
 public class GoCommand implements Command {
@@ -12,13 +12,13 @@ public class GoCommand implements Command {
     }
 
     @Override
-    public GameState execute(Room currentRoom) {
+    public Player execute(Room currentRoom) {
         if(currentRoom.hasUnlockDoor(direction)){
             Room newRoom = currentRoom.getRoom(direction);
-            return new GameState(newRoom, "Hey! i just moved " + newRoom.getName());
+            return new Player(newRoom, "Hey! i just moved " + newRoom.getName());
         }
         else {
-            return  new GameState(currentRoom,"Hey im still here");
+            return  new Player(currentRoom,"Hey im still here");
         }
     }
 
